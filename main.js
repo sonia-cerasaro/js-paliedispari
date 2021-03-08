@@ -6,22 +6,21 @@
 
 
 
-var parola_inserita_utente = prompt("dammi una parola");
-var parola_utente = palindroma(parola_inserita_utente);
+var input_utente = prompt("dammi una parola");
+var parola_utente = palindroma(input_utente);
 
+if (palindroma(parola_utente)) {
+  console.log("la parola e' palindroma");
+} else {
+  console.log("la parola non e' palindroma");
+}
 
-function palindroma(parola_utente) {
-  var lunghezza_parola = parola_utente.length;
+function palindroma(input_utente) {
+  var lunghezza_parola = input_utente.length;
   for (var i = 0; i < lunghezza_parola / 2; i++) {
-    if (parola_utente.charAt(i) !== parola_utente.charAt(lunghezza_parola - 1 - i)) {
+    if (input_utente.charAt(i) !== input_utente.charAt(lunghezza_parola - 1 - i)) {
       return false;
     }
   }
   return true;
-}
-
-if (palindroma(parola_utente)) {
-  console.log("la parola e' polindroma");
-} else {
-  console.log("la parola non e' polindroma");
 }
